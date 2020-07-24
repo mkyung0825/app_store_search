@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YHY-WI-LsO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--투데이-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="투데이" id="uXz-6j-T7Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1522" y="901"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MIo-2Q-kUG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YHY-WI-LsO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8At-0M-cFc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fBp-8K-sJm"/>
+                        <segue destination="bsq-eX-Qsf" kind="relationship" relationship="viewControllers" id="Ifq-b9-bjB"/>
+                        <segue destination="m49-RD-gSV" kind="relationship" relationship="viewControllers" id="6mY-Tu-QdJ"/>
+                        <segue destination="DJi-zk-uEH" kind="relationship" relationship="viewControllers" id="2ei-gF-GE8"/>
+                        <segue destination="rAo-eO-kVu" kind="relationship" relationship="viewControllers" id="68k-eY-Mu6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WT9-ic-Eyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--게임-->
+        <scene sceneID="q2M-jX-Wbc">
+            <objects>
+                <viewController id="bsq-eX-Qsf" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="usF-3o-izE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XOU-jT-QOT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="게임" id="Elp-Hm-nAl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I23-8m-QQ6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="901"/>
+        </scene>
+        <!--앱-->
+        <scene sceneID="tQs-JW-xPZ">
+            <objects>
+                <viewController id="m49-RD-gSV" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ds7-kt-vJF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QMd-J4-Df3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="앱" id="uAh-iK-dt3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21X-Cg-dia" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="901"/>
+        </scene>
+        <!--업데이트-->
+        <scene sceneID="dVf-Lr-yN9">
+            <objects>
+                <viewController id="DJi-zk-uEH" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LzU-0Q-U73">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W7K-00-cL0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="업데이트" id="k9h-Jz-k2C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2C-Rc-BH5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="901"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n7z-ym-yel">
+            <objects>
+                <viewController id="oLB-7M-7ey" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="deB-HZ-U9M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wzS-P6-Cv8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZKC-id-2dL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xaa-3X-T8P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913.04347826087" y="900.66964285714278"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="O8k-T0-Afd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAo-eO-kVu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" id="jkH-w3-z4L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cNK-g7-WcJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oLB-7M-7ey" kind="relationship" relationship="rootViewController" id="DiA-9W-sqT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYv-qz-Hrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002.8985507246377" y="900.66964285714278"/>
+        </scene>
+    </scenes>
+</document>
