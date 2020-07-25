@@ -63,8 +63,9 @@ class SearchViewController: UIViewController {
         
         mTableView.separatorStyle = .none
         
-        mTableView.register(UINib(nibName: "RecentSearchCell", bundle: nil), forCellReuseIdentifier: "RecentSearchCell")
         mTableView.register(UINib(nibName: "RecentSearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "RecentSearchHeaderView")
+        mTableView.register(UINib(nibName: "RecentSearchCell", bundle: nil), forCellReuseIdentifier: "RecentSearchCell")
+        mTableView.register(UINib(nibName: "RecentSearchFilterCell", bundle: nil), forCellReuseIdentifier: "RecentSearchFilterCell")
         
         setTableViewData(recentSearchList: Common.getRecentSearchList())
     }
@@ -178,8 +179,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         } else if sectionType == .FILTER {
-            let cell:RecentSearchCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchCell") as! RecentSearchCell
-            cell.setData(text: mRecentSearchList[indexPath.row])
+            let cell:RecentSearchFilterCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchFilterCell") as! RecentSearchFilterCell
+            cell.setData(text: mRecentSearchList[indexPath.row], filterText: mSearchController.searchBar.text ?? "")
             return cell
             
         } else if sectionType == .SEARCH_RESULT {
