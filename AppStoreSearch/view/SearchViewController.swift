@@ -29,6 +29,9 @@ class SearchViewController: UIViewController {
     // 로컬에 저장 된 최근 검색어 목록
     var mRecentSearchList:[String] = []
     
+    // api 로 받은 검색 결과
+    var mSearchResults: [Result] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,10 +77,22 @@ class SearchViewController: UIViewController {
     
     
     // MARK:- functions
-    func setTableViewData(recentSearchList:[String] = []) {
-        mRecentSearchList = recentSearchList
-        LOG("set data : \(mRecentSearchList)")
+    func setTableViewData(recentSearchList: [String]? = nil, results: [Result]? = nil) {
+        mIsShowResult = (recentSearchList != nil) ? false : true
         
+        if mIsShowResult { // 검색 결과
+            if let resultData = results {
+                mSearchResults = resultData
+                LOG("set > result data : \(resultData)")
+            }
+            
+        } else { // 최근 검색어
+            if let recentSearchData = recentSearchList {
+                mRecentSearchList = recentSearchData
+                LOG("set > recent search data : \(recentSearchData)")
+            }
+        }
+
         mTableView.reloadData()
     }
     
@@ -99,6 +114,31 @@ class SearchViewController: UIViewController {
     // 검색어 클릭
     func clickSearchItem(text: String) {
         LOG("click : \(text)")
+        mIsFiltering = false
+        
+        // 검색어 서치바에 입력, 포커스 아웃
+        mSearchController.searchBar.text = text
+        mSearchController.searchBar.becomeFirstResponder()
+        
+        // 검색 전 빈 항목 노출
+        setTableViewData(results: [])
+        
+        // 검색 api 호출
+        ApiRequestManager.getITunesSearchList(text: text) {
+            (response: ApiResult<[Result]>) in
+
+            switch response {
+            case .apiFail(let error) :
+                LOG("apiFail -> \(error)")
+
+            case .apiSuccess(let data) :
+                LOG("apiSuccess -> \(data)")
+
+                DispatchQueue.main.async {
+                    self.setTableViewData(results: data)
+                }
+            }
+        }
     }
     
     
@@ -149,7 +189,7 @@ class SearchViewController: UIViewController {
         default:
             break
         }
-        
+        print(String(describing: secType))
         return secType
     }
 }
@@ -166,7 +206,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     // row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mRecentSearchList.count
+        let sectionType:SEARCH_SECTION = getSectionType(section: section)
+
+        if sectionType == .RECENT_SEARCH
+            || sectionType == .FILTER {
+            return mRecentSearchList.count
+            
+        } else if sectionType == .SEARCH_RESULT {
+            return mSearchResults.count
+        }
+        return 0
     }
     
     // cell
@@ -184,6 +233,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         } else if sectionType == .SEARCH_RESULT {
+            let cell:RecentSearchCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchCell") as! RecentSearchCell
+            if mSearchResults.count > indexPath.row {
+                cell.setData(text: mSearchResults[indexPath.row].trackName)
+            }
+            return cell
             
         }
         return UITableViewCell()
@@ -197,7 +251,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return 40
             
         } else if sectionType == .SEARCH_RESULT {
-            
+            return 100
         }
         return 0
     }
@@ -258,7 +312,9 @@ extension SearchViewController: UISearchBarDelegate {
     // end editing
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         mIsFiltering = false
-        filterRecentSearch(text: "")
+        if !mIsShowResult {
+            filterRecentSearch(text: "")
+        }
     }
     
     

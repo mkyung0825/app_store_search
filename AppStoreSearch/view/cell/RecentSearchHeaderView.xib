@@ -20,7 +20,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Zwh-kr-Ffo" secondAttribute="bottom" id="IoV-Rs-feR"/>
                 <constraint firstAttribute="trailing" secondItem="Zwh-kr-Ffo" secondAttribute="trailing" constant="20" id="Jg5-24-ol4"/>

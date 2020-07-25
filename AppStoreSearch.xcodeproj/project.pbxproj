@@ -17,6 +17,9 @@
 		40A36B3824CBDF9B002786B8 /* RecentSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A36B3724CBDF9B002786B8 /* RecentSearchHeaderView.xib */; };
 		40A36B3B24CBE753002786B8 /* RecentSearchFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B3924CBE753002786B8 /* RecentSearchFilterCell.swift */; };
 		40A36B3C24CBE753002786B8 /* RecentSearchFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A36B3A24CBE753002786B8 /* RecentSearchFilterCell.xib */; };
+		40A36B3E24CC0162002786B8 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B3D24CC0162002786B8 /* ApiResponse.swift */; };
+		40A36B4124CC01FB002786B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B4024CC01FB002786B8 /* NetworkManager.swift */; };
+		40A36B4324CC02A7002786B8 /* ApiRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B4224CC02A7002786B8 /* ApiRequestManager.swift */; };
 		40A9122F24CB696900D8558F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 40A9122E24CB696900D8558F /* .gitignore */; };
 		40A9123124CBBDE600D8558F /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9123024CBBDE600D8558F /* SearchDetailViewController.swift */; };
 		40A9123324CBBFF700D8558F /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A9123224CBBFF700D8558F /* MainTabViewController.swift */; };
@@ -39,6 +42,9 @@
 		40A36B3724CBDF9B002786B8 /* RecentSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchHeaderView.xib; sourceTree = "<group>"; };
 		40A36B3924CBE753002786B8 /* RecentSearchFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchFilterCell.swift; sourceTree = "<group>"; };
 		40A36B3A24CBE753002786B8 /* RecentSearchFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchFilterCell.xib; sourceTree = "<group>"; };
+		40A36B3D24CC0162002786B8 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = AppStoreSearch/api/ApiResponse.swift; sourceTree = SOURCE_ROOT; };
+		40A36B4024CC01FB002786B8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		40A36B4224CC02A7002786B8 /* ApiRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestManager.swift; sourceTree = "<group>"; };
 		40A9122E24CB696900D8558F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		40A9123024CBBDE600D8558F /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		40A9123224CBBFF700D8558F /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 		403A2DF024CB5D9D00BBA3E4 /* AppStoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				40A36B3F24CC0174002786B8 /* api */,
 				40A9123624CBC19B00D8558F /* common */,
 				40A9123524CBC19200D8558F /* model */,
 				403A2DF124CB5D9D00BBA3E4 /* AppDelegate.swift */,
@@ -90,6 +97,16 @@
 				403A2DFF24CB5DA700BBA3E4 /* Info.plist */,
 			);
 			path = AppStoreSearch;
+			sourceTree = "<group>";
+		};
+		40A36B3F24CC0174002786B8 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				40A36B3D24CC0162002786B8 /* ApiResponse.swift */,
+				40A36B4224CC02A7002786B8 /* ApiRequestManager.swift */,
+				40A36B4024CC01FB002786B8 /* NetworkManager.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		40A9123424CBC18700D8558F /* view */ = {
@@ -206,10 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A36B3E24CC0162002786B8 /* ApiResponse.swift in Sources */,
 				40A9123324CBBFF700D8558F /* MainTabViewController.swift in Sources */,
+				40A36B4324CC02A7002786B8 /* ApiRequestManager.swift in Sources */,
 				40A9123E24CBD9CD00D8558F /* RecentSearchCell.swift in Sources */,
 				40A36B3B24CBE753002786B8 /* RecentSearchFilterCell.swift in Sources */,
 				403A2DF624CB5D9D00BBA3E4 /* SearchViewController.swift in Sources */,
+				40A36B4124CC01FB002786B8 /* NetworkManager.swift in Sources */,
 				403A2DF224CB5D9D00BBA3E4 /* AppDelegate.swift in Sources */,
 				40A9123124CBBDE600D8558F /* SearchDetailViewController.swift in Sources */,
 				40A36B3624CBDF87002786B8 /* RecentSearchHeaderView.swift in Sources */,

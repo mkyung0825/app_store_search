@@ -29,7 +29,7 @@ class RecentSearchFilterCell: UITableViewCell {
         let range = (messageStr as NSString).range(of: attrStr, options: .caseInsensitive)
         
         let attributedString = NSMutableAttributedString(string:messageStr)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: range)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.darkGray, range: range)
         attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 18, weight: .regular), range: range)
 
         mKeywordLabel.attributedText = attributedString

@@ -23,6 +23,19 @@ class Common: NSObject {
         UserDefaultManager.setUserDefault(key: recentSearchKey, value: value)
     }
     
+    
+    
+    // MARK: - functions
+    class func stringByAddingPercentEncoding(text: String) -> String {
+        var allowed = CharacterSet.alphanumerics
+        allowed.insert(charactersIn: "*-._")
+        allowed.insert(charactersIn: " ")
+        
+        var encoded = text.addingPercentEncoding(withAllowedCharacters: allowed)
+        encoded = encoded?.replacingOccurrences(of: " ", with: "+")
+        return encoded ?? ""
+    }
+    
 }
 
 
