@@ -79,7 +79,7 @@ class SearchViewController: UIViewController {
     // MARK:- functions
     func setTableViewData(recentSearchList: [String]? = nil, results: [Result]? = nil) {
         mIsShowResult = (recentSearchList != nil) ? false : true
-        
+    
         if mIsShowResult { // 검색 결과
             if let resultData = results {
                 mSearchResults = resultData
@@ -98,6 +98,7 @@ class SearchViewController: UIViewController {
     
     // 최근 검색어 필터
     func filterRecentSearch(text: String) {
+        mIsFiltering = text.isEmpty ? false : true
         
         let searchList = Common.getRecentSearchList()
         
@@ -114,14 +115,10 @@ class SearchViewController: UIViewController {
     // 검색어 클릭
     func clickSearchItem(text: String) {
         LOG("click : \(text)")
-        mIsFiltering = false
         
         // 검색어 서치바에 입력, 포커스 아웃
         mSearchController.searchBar.text = text
         mSearchController.searchBar.becomeFirstResponder()
-        
-        // 검색 전 빈 항목 노출
-        setTableViewData(results: [])
         
         // 검색 api 호출
         ApiRequestManager.getITunesSearchList(text: text) {
@@ -161,7 +158,7 @@ class SearchViewController: UIViewController {
     }
     func searchResultSection() -> Int {
         var sction:Int = filterSection()
-        if !mIsFiltering && mIsShowResult {
+        if mIsShowResult {
             sction += 1
         }
         return sction
@@ -305,13 +302,13 @@ extension SearchViewController: UISearchBarDelegate {
     
     // begin editing
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        mIsFiltering = true
-        filterRecentSearch(text: "")
+        if !mIsShowResult {
+            filterRecentSearch(text: "")
+        }
     }
     
     // end editing
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        mIsFiltering = false
         if !mIsShowResult {
             filterRecentSearch(text: "")
         }
