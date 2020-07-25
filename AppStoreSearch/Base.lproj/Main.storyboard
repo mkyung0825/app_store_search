@@ -103,7 +103,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-Cg-Yx6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -117,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="검색" id="ZKC-id-2dL"/>
                     <connections>
+                        <outlet property="mTableView" destination="7OH-Cg-Yx6" id="Dyy-Nw-vdU"/>
                         <segue destination="IoA-qp-EV6" kind="show" id="gxI-Xs-phz"/>
                     </connections>
                 </viewController>
