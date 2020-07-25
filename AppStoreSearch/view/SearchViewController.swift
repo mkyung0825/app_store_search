@@ -69,6 +69,7 @@ class SearchViewController: UIViewController {
         mTableView.register(UINib(nibName: "RecentSearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "RecentSearchHeaderView")
         mTableView.register(UINib(nibName: "RecentSearchCell", bundle: nil), forCellReuseIdentifier: "RecentSearchCell")
         mTableView.register(UINib(nibName: "RecentSearchFilterCell", bundle: nil), forCellReuseIdentifier: "RecentSearchFilterCell")
+        mTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
         
         setTableViewData(recentSearchList: Common.getRecentSearchList())
     }
@@ -186,7 +187,6 @@ class SearchViewController: UIViewController {
         default:
             break
         }
-        print(String(describing: secType))
         return secType
     }
 }
@@ -220,19 +220,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let sectionType:SEARCH_SECTION = getSectionType(section: indexPath.section)
         
         if sectionType == .RECENT_SEARCH {
-            let cell:RecentSearchCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchCell") as! RecentSearchCell
+            let cell:RecentSearchCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchCell", for: indexPath) as! RecentSearchCell
             cell.setData(text: mRecentSearchList[indexPath.row])
             return cell
             
         } else if sectionType == .FILTER {
-            let cell:RecentSearchFilterCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchFilterCell") as! RecentSearchFilterCell
+            let cell:RecentSearchFilterCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchFilterCell", for: indexPath) as! RecentSearchFilterCell
             cell.setData(text: mRecentSearchList[indexPath.row], filterText: mSearchController.searchBar.text ?? "")
             return cell
             
         } else if sectionType == .SEARCH_RESULT {
-            let cell:RecentSearchCell = tableView.dequeueReusableCell(withIdentifier: "RecentSearchCell") as! RecentSearchCell
+            let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
             if mSearchResults.count > indexPath.row {
-                cell.setData(text: mSearchResults[indexPath.row].trackName)
+                cell.setData(result: mSearchResults[indexPath.row])
             }
             return cell
             
@@ -243,12 +243,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let sectionType:SEARCH_SECTION = getSectionType(section: indexPath.section)
         
-        if sectionType == .RECENT_SEARCH
-            || sectionType == .FILTER {
-            return 40
+        if sectionType == .RECENT_SEARCH {
+            return RecentSearchCell.CELL_HEIGHT
+
+        } else if sectionType == .FILTER {
+            return RecentSearchFilterCell.CELL_HEIGHT
             
         } else if sectionType == .SEARCH_RESULT {
-            return 100
+            return SearchResultCell.CELL_HEIGHT
         }
         return 0
     }
@@ -267,7 +269,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let sectionType:SEARCH_SECTION = getSectionType(section: section)
         
         if sectionType == .RECENT_SEARCH {
-            return 60
+            return RecentSearchHeaderView.CELL_HEIGHT
         }
         return 0
     }

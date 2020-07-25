@@ -13,8 +13,8 @@ class ApiRequestManager: NSObject {
         
         let term = Common.stringByAddingPercentEncoding(text: text)
         
-        // https://itunes.apple.com/search?term=\(term)&entity=software
-        NetworkManager.sharedInstance.request(queryString: "search?term=\(term)&entity=software", completion: completion)
+        // https://itunes.apple.com/search?term=\(term)&entity=software&country=kr
+        NetworkManager.sharedInstance.request(queryString: "search?term=\(term)&entity=software&country=kr", completion: completion)
     }
     
     class func getITunesSearcDetail(id: Int) {

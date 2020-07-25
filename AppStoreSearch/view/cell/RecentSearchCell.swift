@@ -8,7 +8,9 @@
 import UIKit
 
 class RecentSearchCell: UITableViewCell {
-
+    
+    static let CELL_HEIGHT:CGFloat = 40
+    
     @IBOutlet weak var mKeywordLabel: UILabel!
     
     override func awakeFromNib() {

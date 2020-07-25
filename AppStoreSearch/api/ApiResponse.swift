@@ -60,6 +60,10 @@ struct Result: Codable {
     
     var screenshotUrls: [String]
     var userRatingCount: Int
+    var averageUserRating: CGFloat
+    
+    var artworkUrl512: String
+    
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -71,5 +75,8 @@ struct Result: Codable {
 
         screenshotUrls = try container.decodeIfPresent([String].self, forKey: .screenshotUrls) ?? []
         userRatingCount = try container.decodeIfPresent(Int.self, forKey: .userRatingCount) ?? 0
+        averageUserRating = try container.decodeIfPresent(CGFloat.self, forKey: .averageUserRating) ?? 0
+        
+        artworkUrl512 = try container.decodeIfPresent(String.self, forKey: .artworkUrl512) ?? ""
     }
 }
