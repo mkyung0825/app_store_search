@@ -17,16 +17,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="투데이" id="uXz-6j-T7Z"/>
+                    <tabBarItem key="tabBarItem" title="투데이" image="square.and.pencil" catalog="system" id="uXz-6j-T7Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1522" y="901"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab View Controller-->
         <scene sceneID="MIo-2Q-kUG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YHY-WI-LsO" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YHY-WI-LsO" customClass="MainTabViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8At-0M-cFc">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -55,7 +55,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XOU-jT-QOT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="게임" id="Elp-Hm-nAl"/>
+                    <tabBarItem key="tabBarItem" title="게임" image="paperplane" catalog="system" id="Elp-Hm-nAl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I23-8m-QQ6" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +71,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="QMd-J4-Df3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="앱" id="uAh-iK-dt3"/>
+                    <tabBarItem key="tabBarItem" title="앱" image="square.stack.3d.up" catalog="system" id="uAh-iK-dt3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21X-Cg-dia" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,23 +87,38 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="W7K-00-cL0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="업데이트" id="k9h-Jz-k2C"/>
+                    <tabBarItem key="tabBarItem" title="업데이트" image="square.and.arrow.down.fill" catalog="system" id="k9h-Jz-k2C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2C-Rc-BH5" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1152" y="901"/>
         </scene>
-        <!--View Controller-->
+        <!--검색-->
         <scene sceneID="n7z-ym-yel">
             <objects>
-                <viewController id="oLB-7M-7ey" customClass="ViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="oLB-7M-7ey" customClass="SearchViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deB-HZ-U9M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-Cg-Yx6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7OH-Cg-Yx6" firstAttribute="leading" secondItem="wzS-P6-Cv8" secondAttribute="leading" id="KZN-vi-HdN"/>
+                            <constraint firstItem="wzS-P6-Cv8" firstAttribute="trailing" secondItem="7OH-Cg-Yx6" secondAttribute="trailing" id="W5W-Vv-K8w"/>
+                            <constraint firstItem="7OH-Cg-Yx6" firstAttribute="top" secondItem="wzS-P6-Cv8" secondAttribute="top" id="ckJ-9R-Gqv"/>
+                            <constraint firstItem="wzS-P6-Cv8" firstAttribute="bottom" secondItem="7OH-Cg-Yx6" secondAttribute="bottom" id="kqK-13-cQP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wzS-P6-Cv8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZKC-id-2dL"/>
+                    <navigationItem key="navigationItem" title="검색" id="ZKC-id-2dL"/>
+                    <connections>
+                        <segue destination="IoA-qp-EV6" kind="show" id="gxI-Xs-phz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaa-3X-T8P" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +128,7 @@
         <scene sceneID="O8k-T0-Afd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAo-eO-kVu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="검색" id="jkH-w3-z4L"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="jkH-w3-z4L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cNK-g7-WcJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -128,5 +143,28 @@
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="900.66964285714278"/>
         </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="wQJ-uD-26V">
+            <objects>
+                <viewController storyboardIdentifier="SearchDetailViewController" id="IoA-qp-EV6" customClass="SearchDetailViewController" customModule="AppStoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kIY-xc-p9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Swm-Qq-7uF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z1B-f6-4Av"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fs7-G6-UVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768" y="901"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="paperplane" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="square.stack.3d.up" catalog="system" width="128" height="124"/>
+    </resources>
 </document>
