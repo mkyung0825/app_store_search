@@ -26,6 +26,7 @@ class Common: NSObject {
     
     
     // MARK: - functions
+    // url encoding
     class func stringByAddingPercentEncoding(text: String) -> String {
         var allowed = CharacterSet.alphanumerics
         allowed.insert(charactersIn: "*-._")
@@ -36,6 +37,10 @@ class Common: NSObject {
         return encoded ?? ""
     }
     
+    // 소숫점 몇째자리(count) 까지 반올림 -> 문자로 반환
+    class func roundFloat(number: CGFloat, count: Int = 0) -> String {
+        return String(format: "%.\(count)f", number)
+    }
 }
 
 
