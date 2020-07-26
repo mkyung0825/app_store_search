@@ -8,22 +8,53 @@
 import UIKit
 
 class SearchDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var mTableView: UITableView!
+    
+    var mId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.\
+       setUI()
+    }
+
+    
+    // MARK:- set ui
+    func setUI() {
+        
+        setTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setTableView() {
+        mTableView.delegate = self
+        mTableView.dataSource = self
+        
+        mTableView.separatorStyle = .none
     }
-    */
+}
 
+
+
+
+
+// MARK: - extension UITableView
+extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource {
+
+    // row
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    // cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
 }

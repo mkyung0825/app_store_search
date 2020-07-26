@@ -12,7 +12,6 @@ class SearchResultCell: UITableViewCell {
     
     static let CELL_HEIGHT:CGFloat = 340
     
-    
     @IBOutlet weak var mIconImageView: UIImageView!
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mSubTitleLabel: UILabel!
@@ -24,7 +23,7 @@ class SearchResultCell: UITableViewCell {
     
     @IBOutlet var mScreenShotImagse: [UIImageView]!
     
-    
+    var mProtocol:SearchViewProtocol!
     var mResult:Result!
     
     
@@ -58,7 +57,8 @@ class SearchResultCell: UITableViewCell {
     }
     
     
-    func setData(result: Result) {
+    func setData(searchProtocol: SearchViewProtocol, result: Result) {
+        mProtocol = searchProtocol
         mResult = result
         
         // 아이콘
@@ -78,10 +78,16 @@ class SearchResultCell: UITableViewCell {
         
         // 스크린샷
         for (idx,imgVIew) in mScreenShotImagse.enumerated() {
+            imgVIew.image = nil
             if result.screenshotUrls.count > idx
                 && !result.screenshotUrls[idx].isEmpty {
                 imgVIew.load(url: result.screenshotUrls[idx])
             }
         }
+    }
+    
+    // 열기 버튼 이벤트
+    @IBAction func openBtnClickEvent(_ sender: UIButton) {
+        mProtocol?.openClick(id: mResult.trackId)
     }
 }

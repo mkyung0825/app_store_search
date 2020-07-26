@@ -14,7 +14,12 @@ enum SEARCH_SECTION:Int {
     case NONE
 }
 
-class SearchViewController: UIViewController {
+protocol SearchViewProtocol {
+    func openClick(id: Int)
+}
+
+class SearchViewController: UIViewController, SearchViewProtocol {
+    
     
     @IBOutlet weak var mTableView: UITableView!
      
@@ -36,14 +41,15 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        definesPresentationContext = true    // 상세 화면 서치바 안보이게 설정
+        
         setUI()
     }
 
     
     // MARK:- set ui
     func setUI() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
         setSearchBar()
         setTableView()
     }
@@ -72,12 +78,22 @@ class SearchViewController: UIViewController {
         mTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
         
         setTableViewData(recentSearchList: Common.getRecentSearchList())
+        
     }
     
     
     
     
     // MARK:- functions
+    func showDetailViewController(id: Int) {
+        mSearchController.searchBar.resignFirstResponder()
+
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchDetailViewController") as! SearchDetailViewController
+        detailVC.mId = id
+        detailVC.hidesBottomBarWhenPushed = true    // 상세 화면 탭바 안보이게 설정
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func setTableViewData(recentSearchList: [String]? = nil, results: [Result]? = nil) {
         mIsShowResult = (recentSearchList != nil) ? false : true
     
@@ -137,6 +153,14 @@ class SearchViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    
+    
+    
+    // MARK:- cell protocol
+    func openClick(id: Int) {
+        showDetailViewController(id: id)
     }
     
     
@@ -232,14 +256,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else if sectionType == .SEARCH_RESULT {
             let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
             if mSearchResults.count > indexPath.row {
-                cell.setData(result: mSearchResults[indexPath.row])
+                cell.setData(searchProtocol: self, result: mSearchResults[indexPath.row])
             }
             return cell
             
         }
         return UITableViewCell()
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let sectionType:SEARCH_SECTION = getSectionType(section: indexPath.section)
         
@@ -285,7 +308,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             clickSearchItem(text: mRecentSearchList[indexPath.row])
             
         } else if sectionType == .SEARCH_RESULT {
-
+            showDetailViewController(id : mSearchResults[indexPath.row].trackId)
         }
     }
 }
