@@ -139,6 +139,7 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             
         } else if rowType == .SCREEN_SHOT {
             let cell:SearchDetailScreenShotCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailScreenShotCell", for: indexPath) as! SearchDetailScreenShotCell
+            cell.setData(screenshots: mResult?.screenshotUrls ?? [])
             return cell
 
         } else if rowType == .DESC {
@@ -163,6 +164,8 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             return UITableView.automaticDimension
             
         } else if rowType == .SCREEN_SHOT {
+            let size:CGSize = Common.getImageSizeWithUrl(url: mResult?.screenshotUrls[0] ?? "")
+            return (size.height / 2) + SearchDetailScreenShotCell.TOP_MARGIN + SearchDetailScreenShotCell.BOTTOM_MARGIN
 
         } else if rowType == .DESC {
 
@@ -219,6 +222,14 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
         if rowType == .RELEASE_NOTE || rowType == .SCREEN_SHOT {
             return RecentSearchHeaderView.CELL_DETAIL_HEIGHT
         }
-        return 0
+        return 0.1
+    }
+    
+    // footer
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
 }

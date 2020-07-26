@@ -27,10 +27,10 @@
                                 <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdV-8E-EqI">
-                                <rect key="frame" x="241" y="142" width="39" height="20"/>
+                                <rect key="frame" x="241" y="137" width="39" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="wLS-aN-cKL"/>
+                                    <constraint firstAttribute="height" constant="25" id="wLS-aN-cKL"/>
                                 </constraints>
                                 <state key="normal" title="더보기"/>
                             </button>

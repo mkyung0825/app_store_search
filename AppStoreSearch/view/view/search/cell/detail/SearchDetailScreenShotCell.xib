@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="308" id="KGk-i7-Jjw" customClass="SearchDetailScreenShotCell" customModule="AppStoreSearch" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="308" id="KGk-i7-Jjw" customClass="SearchDetailScreenShotCell" customModule="AppStoreSearch" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -18,9 +18,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ffV-uK-Myw">
-                        <rect key="frame" x="20" y="20" width="280" height="268"/>
+                        <rect key="frame" x="20" y="5" width="280" height="283"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QOZ-4B-ee3">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QOZ-4B-ee3">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -43,10 +43,13 @@
                     <constraint firstItem="1JN-1M-apR" firstAttribute="leading" secondItem="ffV-uK-Myw" secondAttribute="leading" id="mjD-0t-vFn"/>
                     <constraint firstAttribute="bottom" secondItem="1JN-1M-apR" secondAttribute="bottom" id="rq2-xU-qiQ"/>
                     <constraint firstAttribute="bottom" secondItem="ffV-uK-Myw" secondAttribute="bottom" constant="20" id="tNf-QN-V8A"/>
-                    <constraint firstItem="ffV-uK-Myw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="zwm-10-7ee"/>
+                    <constraint firstItem="ffV-uK-Myw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="zwm-10-7ee"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mCollectionView" destination="ffV-uK-Myw" id="Y70-8a-UZf"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="17.410714285714285"/>
         </tableViewCell>
     </objects>
