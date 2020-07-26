@@ -46,6 +46,7 @@ class SearchResultCell: UITableViewCell {
         
         // 별 평점
         mUserRatingView.settings.fillMode = .precise
+        mUserRatingView.isUserInteractionEnabled = false
         
         // 열기 버튼 - corner radius
         mOpenButton.setCornerRadius()
@@ -74,7 +75,7 @@ class SearchResultCell: UITableViewCell {
         mUserRatingView.rating = Double(result.averageUserRating)
         
         // 평점 수
-        mUserRatingLabel.text = "\(result.userRatingCount)"
+        mUserRatingLabel.text = result.userRatingCount > 0 ? "\(result.userRatingCount)" : ""
         
         // 스크린샷
         for (idx,imgVIew) in mScreenShotImagse.enumerated() {

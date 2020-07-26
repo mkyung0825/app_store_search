@@ -40,7 +40,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbV-o6-vUv">
-                                                <rect key="frame" x="0.0" y="63" width="229" height="17"/>
+                                                <rect key="frame" x="0.0" y="5" width="229" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,10 +86,10 @@
                                             <constraint firstItem="TbV-o6-vUv" firstAttribute="leading" secondItem="dlt-3g-Yzg" secondAttribute="leading" id="796-AC-1hu"/>
                                             <constraint firstAttribute="bottom" secondItem="cdM-7V-jQN" secondAttribute="bottom" id="CP0-ip-Jmp"/>
                                             <constraint firstItem="cdM-7V-jQN" firstAttribute="leading" secondItem="dlt-3g-Yzg" secondAttribute="leading" id="THd-Ex-OGY"/>
-                                            <constraint firstItem="TbV-o6-vUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SdD-uh-6bO" secondAttribute="bottom" constant="5" id="Yfb-VM-4li"/>
+                                            <constraint firstItem="TbV-o6-vUv" firstAttribute="top" secondItem="SdD-uh-6bO" secondAttribute="bottom" constant="5" id="Yfb-VM-4li"/>
                                             <constraint firstAttribute="trailing" secondItem="SdD-uh-6bO" secondAttribute="trailing" id="aw0-kK-WYx"/>
                                             <constraint firstAttribute="trailing" secondItem="TbV-o6-vUv" secondAttribute="trailing" id="cue-aY-h2S"/>
-                                            <constraint firstItem="cdM-7V-jQN" firstAttribute="top" secondItem="TbV-o6-vUv" secondAttribute="bottom" constant="15" id="dhe-Bd-yAb"/>
+                                            <constraint firstItem="cdM-7V-jQN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TbV-o6-vUv" secondAttribute="bottom" constant="15" id="dhe-Bd-yAb"/>
                                             <constraint firstItem="SdD-uh-6bO" firstAttribute="top" secondItem="dlt-3g-Yzg" secondAttribute="top" id="hpB-G5-OCh"/>
                                             <constraint firstAttribute="trailing" secondItem="cdM-7V-jQN" secondAttribute="trailing" id="l7l-Y2-cUk"/>
                                             <constraint firstItem="SdD-uh-6bO" firstAttribute="leading" secondItem="dlt-3g-Yzg" secondAttribute="leading" id="mzV-E9-YEb"/>
@@ -124,7 +124,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="1i4-8f-eAC" customClass="CosmosView" customModule="Cosmos">
-                                                        <rect key="frame" x="9" y="0.5" width="70" height="14"/>
+                                                        <rect key="frame" x="5" y="0.5" width="70" height="14"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -160,7 +160,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="dn9-3z-0yA" secondAttribute="bottom" id="JCh-Ih-Hwv"/>
                                                     <constraint firstItem="1i4-8f-eAC" firstAttribute="centerY" secondItem="bxc-Ai-THv" secondAttribute="centerY" id="eIs-S9-WW5"/>
                                                     <constraint firstItem="dn9-3z-0yA" firstAttribute="leading" secondItem="bxc-Ai-THv" secondAttribute="leading" id="h93-0W-Pb8"/>
-                                                    <constraint firstItem="1i4-8f-eAC" firstAttribute="leading" secondItem="dn9-3z-0yA" secondAttribute="trailing" constant="5" id="jpz-kM-xiB"/>
+                                                    <constraint firstItem="1i4-8f-eAC" firstAttribute="leading" secondItem="dn9-3z-0yA" secondAttribute="trailing" constant="1" id="jpz-kM-xiB"/>
                                                     <constraint firstItem="dn9-3z-0yA" firstAttribute="top" secondItem="bxc-Ai-THv" secondAttribute="top" id="p2c-kL-4X2"/>
                                                 </constraints>
                                             </view>

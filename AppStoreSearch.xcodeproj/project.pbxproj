@@ -19,8 +19,8 @@
 		4048D23524CC47260099170D /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4048D23324CC47260099170D /* SearchResultCell.xib */; };
 		40492AF324CD463E006E41D5 /* SearchDetailAppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40492AF124CD463E006E41D5 /* SearchDetailAppInfoCell.swift */; };
 		40492AF424CD463E006E41D5 /* SearchDetailAppInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40492AF224CD463E006E41D5 /* SearchDetailAppInfoCell.xib */; };
-		40492AF924CD4701006E41D5 /* SearchDetailNewFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40492AF724CD4701006E41D5 /* SearchDetailNewFeatureCell.swift */; };
-		40492AFA24CD4701006E41D5 /* SearchDetailNewFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40492AF824CD4701006E41D5 /* SearchDetailNewFeatureCell.xib */; };
+		40492AF924CD4701006E41D5 /* SearchDetailReleaseNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40492AF724CD4701006E41D5 /* SearchDetailReleaseNoteCell.swift */; };
+		40492AFA24CD4701006E41D5 /* SearchDetailReleaseNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40492AF824CD4701006E41D5 /* SearchDetailReleaseNoteCell.xib */; };
 		40A36B3624CBDF87002786B8 /* RecentSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B3524CBDF87002786B8 /* RecentSearchHeaderView.swift */; };
 		40A36B3824CBDF9B002786B8 /* RecentSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A36B3724CBDF9B002786B8 /* RecentSearchHeaderView.xib */; };
 		40A36B3B24CBE753002786B8 /* RecentSearchFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A36B3924CBE753002786B8 /* RecentSearchFilterCell.swift */; };
@@ -51,8 +51,8 @@
 		4048D23324CC47260099170D /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		40492AF124CD463E006E41D5 /* SearchDetailAppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailAppInfoCell.swift; sourceTree = "<group>"; };
 		40492AF224CD463E006E41D5 /* SearchDetailAppInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailAppInfoCell.xib; sourceTree = "<group>"; };
-		40492AF724CD4701006E41D5 /* SearchDetailNewFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailNewFeatureCell.swift; sourceTree = "<group>"; };
-		40492AF824CD4701006E41D5 /* SearchDetailNewFeatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailNewFeatureCell.xib; sourceTree = "<group>"; };
+		40492AF724CD4701006E41D5 /* SearchDetailReleaseNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailReleaseNoteCell.swift; sourceTree = "<group>"; };
+		40492AF824CD4701006E41D5 /* SearchDetailReleaseNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailReleaseNoteCell.xib; sourceTree = "<group>"; };
 		40A36B3524CBDF87002786B8 /* RecentSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchHeaderView.swift; sourceTree = "<group>"; };
 		40A36B3724CBDF9B002786B8 /* RecentSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchHeaderView.xib; sourceTree = "<group>"; };
 		40A36B3924CBE753002786B8 /* RecentSearchFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchFilterCell.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 			children = (
 				40492AF124CD463E006E41D5 /* SearchDetailAppInfoCell.swift */,
 				40492AF224CD463E006E41D5 /* SearchDetailAppInfoCell.xib */,
-				40492AF724CD4701006E41D5 /* SearchDetailNewFeatureCell.swift */,
-				40492AF824CD4701006E41D5 /* SearchDetailNewFeatureCell.xib */,
+				40492AF724CD4701006E41D5 /* SearchDetailReleaseNoteCell.swift */,
+				40492AF824CD4701006E41D5 /* SearchDetailReleaseNoteCell.xib */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				403A2DFB24CB5DA700BBA3E4 /* Assets.xcassets in Resources */,
 				40A36B3824CBDF9B002786B8 /* RecentSearchHeaderView.xib in Resources */,
 				40A36B3C24CBE753002786B8 /* RecentSearchFilterCell.xib in Resources */,
-				40492AFA24CD4701006E41D5 /* SearchDetailNewFeatureCell.xib in Resources */,
+				40492AFA24CD4701006E41D5 /* SearchDetailReleaseNoteCell.xib in Resources */,
 				403A2DF924CB5D9D00BBA3E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +357,7 @@
 			files = (
 				4048D23424CC47260099170D /* SearchResultCell.swift in Sources */,
 				40A36B3E24CC0162002786B8 /* ApiResponse.swift in Sources */,
-				40492AF924CD4701006E41D5 /* SearchDetailNewFeatureCell.swift in Sources */,
+				40492AF924CD4701006E41D5 /* SearchDetailReleaseNoteCell.swift in Sources */,
 				40A9123324CBBFF700D8558F /* MainTabViewController.swift in Sources */,
 				40A36B4324CC02A7002786B8 /* ApiRequestManager.swift in Sources */,
 				40A9123E24CBD9CD00D8558F /* RecentSearchCell.swift in Sources */,
@@ -520,7 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KMRTV7DBY;
 				INFOPLIST_FILE = AppStoreSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KMRTV7DBY;
 				INFOPLIST_FILE = AppStoreSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
