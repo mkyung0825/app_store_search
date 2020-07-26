@@ -82,6 +82,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="K99-q0-Q17" firstAttribute="trailing" secondItem="IRB-Cp-DaJ" secondAttribute="trailing" id="1kK-4d-gvm"/>
                     <constraint firstAttribute="bottom" secondItem="K99-q0-Q17" secondAttribute="bottom" id="COH-At-jaN"/>
@@ -92,6 +93,7 @@
                     <constraint firstAttribute="trailing" secondItem="IRB-Cp-DaJ" secondAttribute="trailing" constant="20" id="rPB-CZ-OMS"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="width" secondItem="13b-yL-oIS" secondAttribute="height" multiplier="320:21" id="aHe-yB-sqr"/>
             </constraints>

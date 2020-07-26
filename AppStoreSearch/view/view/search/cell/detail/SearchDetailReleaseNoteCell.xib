@@ -70,6 +70,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="iah-qd-fcX" firstAttribute="leading" secondItem="oOn-8s-L87" secondAttribute="leading" id="CeA-6O-gBe"/>
                     <constraint firstAttribute="bottom" secondItem="iah-qd-fcX" secondAttribute="bottom" id="FEw-l5-EAS"/>
@@ -80,6 +81,7 @@
                     <constraint firstAttribute="trailing" secondItem="oOn-8s-L87" secondAttribute="trailing" constant="20" id="z4D-V3-cBh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="mMoreButton" destination="bbA-nl-jOe" id="6tm-3r-NqU"/>

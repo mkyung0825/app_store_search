@@ -35,6 +35,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="ffV-uK-Myw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5yl-S4-5AV"/>
                     <constraint firstItem="1JN-1M-apR" firstAttribute="trailing" secondItem="ffV-uK-Myw" secondAttribute="trailing" id="JxN-i8-kik"/>

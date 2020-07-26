@@ -257,6 +257,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xyh-LA-Uqy" secondAttribute="trailing" id="1Af-bW-vFE"/>
                             <constraint firstItem="xyh-LA-Uqy" firstAttribute="top" secondItem="h9o-XP-Phl" secondAttribute="top" id="9iu-dm-2U2"/>
@@ -275,6 +276,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 <constraints>
                     <constraint firstItem="mtH-QC-Urr" firstAttribute="leading" secondItem="h9o-XP-Phl" secondAttribute="leading" id="HNb-8H-3OB"/>
                     <constraint firstItem="h9o-XP-Phl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="L07-Dc-yb6"/>
@@ -285,6 +287,7 @@
                     <constraint firstItem="h9o-XP-Phl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="qoT-gK-PSf"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="mIconImageView" destination="Jk4-SD-Xz9" id="lgM-QS-0pC"/>
