@@ -8,9 +8,11 @@
 import UIKit
 
 
-enum SEARCH_DETAIL_ROW:Int {
+enum SEARCH_DETAIL_SECTION:Int {
     case APP_INFO = 0
     case RELEASE_NOTE
+    case SCREEN_SHOT
+    case DESC
     case COUNT
 }
 
@@ -24,6 +26,8 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
     var mResult: Result? = nil
     
     var mIsExpandReleaseNote:Bool = false
+    
+    var mIsExpandDesc:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +53,13 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
         mTableView.rowHeight = UITableView.automaticDimension
         mTableView.estimatedRowHeight = 200
         
+        mTableView.register(UINib(nibName: "RecentSearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "RecentSearchHeaderView")
+        
         mTableView.register(UINib(nibName: "SearchDetailAppInfoCell", bundle: nil), forCellReuseIdentifier: "SearchDetailAppInfoCell")
         mTableView.register(UINib(nibName: "SearchDetailReleaseNoteCell", bundle: nil), forCellReuseIdentifier: "SearchDetailReleaseNoteCell")
+        
+        mTableView.register(UINib(nibName: "SearchDetailScreenShotCell", bundle: nil), forCellReuseIdentifier: "SearchDetailScreenShotCell")
+        mTableView.register(UINib(nibName: "SearchDetailDescriptionCell", bundle: nil), forCellReuseIdentifier: "SearchDetailDescriptionCell")
         
         getData()
     }
@@ -98,15 +107,19 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
 // MARK: - extension UITableView
 extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return SEARCH_DETAIL_SECTION.COUNT.rawValue
+    }
+    
     // row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SEARCH_DETAIL_ROW.COUNT.rawValue
+        return 1
     }
     
     // cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let rowType: SEARCH_DETAIL_ROW = SEARCH_DETAIL_ROW.init(rawValue: indexPath.row) ?? .COUNT
+        let rowType: SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: indexPath.section) ?? .COUNT
         
         if rowType == .APP_INFO {
             
@@ -124,26 +137,43 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             }
             return cell
             
+        } else if rowType == .SCREEN_SHOT {
+            let cell:SearchDetailScreenShotCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailScreenShotCell", for: indexPath) as! SearchDetailScreenShotCell
+            return cell
+
+        } else if rowType == .DESC {
+            let cell:SearchDetailDescriptionCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailDescriptionCell", for: indexPath) as! SearchDetailDescriptionCell
+            if let result = mResult {
+                cell.setData(searchProtocol: self, result: result, isExpand: mIsExpandDesc)
+            }
+            return cell
+
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let rowType:SEARCH_DETAIL_ROW = SEARCH_DETAIL_ROW.init(rawValue: indexPath.row) ?? .COUNT
+        let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: indexPath.section) ?? .COUNT
         
         if rowType == .APP_INFO {
             return SearchDetailAppInfoCell.CELL_HEIGHT
 
         } else if rowType == .RELEASE_NOTE {
             return UITableView.automaticDimension
+            
+        } else if rowType == .SCREEN_SHOT {
+
+        } else if rowType == .DESC {
+
         }
-        return 0
+        return UITableView.automaticDimension
     }
     
+    // select
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let rowType: SEARCH_DETAIL_ROW = SEARCH_DETAIL_ROW.init(rawValue: indexPath.row) ?? .COUNT
+        let rowType: SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: indexPath.section) ?? .COUNT
         
         if rowType == .RELEASE_NOTE {
             // 셀 클릭 시 릴리즈 노트 더보기 기능
@@ -151,6 +181,44 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
                 mIsExpandReleaseNote = true
                 tableView.reloadRows(at: [indexPath], with: .none)
             }
+        } else if rowType == .DESC {
+            // 셀 클릭 시 디스크립션 더보기 기능
+            if !mIsExpandDesc {
+                mIsExpandDesc = true
+                tableView.reloadRows(at: [indexPath], with: .none)
+            }
         }
+    }
+    
+    // header
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
+        
+        if rowType == .APP_INFO {
+
+        } else if rowType == .RELEASE_NOTE {
+
+            let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
+            view.setData(title: "새로운 기능")
+            return view
+            
+        } else if rowType == .SCREEN_SHOT {
+
+            let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
+            view.setData(title: "미리보기")
+            return view
+
+        } else if rowType == .DESC {
+            
+        }
+        return nil
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
+        
+        if rowType == .RELEASE_NOTE || rowType == .SCREEN_SHOT {
+            return RecentSearchHeaderView.CELL_DETAIL_HEIGHT
+        }
+        return 0
     }
 }

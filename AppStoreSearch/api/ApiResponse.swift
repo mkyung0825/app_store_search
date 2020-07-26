@@ -60,11 +60,13 @@ struct Result: Codable {
     var artistName: String
     var artworkUrl512: String
     
-    var screenshotUrls: [String]
-    
     var userRatingCount: Int
     var averageUserRating: CGFloat
     var trackContentRating: String
+    
+    var screenshotUrls: [String]
+    
+    var description: String
     
     var version: String
     var currentVersionReleaseDate: String
@@ -79,13 +81,14 @@ struct Result: Codable {
         artistName = try container.decodeIfPresent(String.self, forKey: .artistName) ?? ""
         releaseDate = try container.decodeIfPresent(String.self, forKey: .releaseDate) ?? ""
         artworkUrl512 = try container.decodeIfPresent(String.self, forKey: .artworkUrl512) ?? ""
-
-        screenshotUrls = try container.decodeIfPresent([String].self, forKey: .screenshotUrls) ?? []
         
         userRatingCount = try container.decodeIfPresent(Int.self, forKey: .userRatingCount) ?? 0
         averageUserRating = try container.decodeIfPresent(CGFloat.self, forKey: .averageUserRating) ?? 0
         trackContentRating = try container.decodeIfPresent(String.self, forKey: .trackContentRating) ?? ""
+
+        screenshotUrls = try container.decodeIfPresent([String].self, forKey: .screenshotUrls) ?? []
         
+        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         
         version = try container.decodeIfPresent(String.self, forKey: .version) ?? ""
         currentVersionReleaseDate = try container.decodeIfPresent(String.self, forKey: .currentVersionReleaseDate) ?? ""
