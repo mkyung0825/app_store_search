@@ -74,7 +74,7 @@ class SearchDetailAppInfoCell: UITableViewCell {
         
         
         // 평점 수
-        mUserRatingLabel.text = result.userRatingCount > 0 ? "\(result.userRatingCount)개의 평가" : "평가 없음"
+        mUserRatingLabel.text = result.userRatingCount > 0 ? "\(Common.kmFormatStr(value: result.userRatingCount))개의 평가" : "평가 없음"
         
         // 연령
         mTrackContentRating.text = result.trackContentRating

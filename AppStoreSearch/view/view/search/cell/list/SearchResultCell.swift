@@ -75,7 +75,7 @@ class SearchResultCell: UITableViewCell {
         mUserRatingView.rating = Double(result.averageUserRating)
         
         // 평점 수
-        mUserRatingLabel.text = result.userRatingCount > 0 ? "\(result.userRatingCount)" : ""
+        mUserRatingLabel.text = result.userRatingCount > 0 ? Common.kmFormatStr(value: result.userRatingCount) : ""
         
         // 스크린샷
         for (idx,imgVIew) in mScreenShotImagse.enumerated() {

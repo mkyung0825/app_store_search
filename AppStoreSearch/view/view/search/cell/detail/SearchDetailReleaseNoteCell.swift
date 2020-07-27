@@ -45,7 +45,7 @@ class SearchDetailReleaseNoteCell: UITableViewCell {
         mVersionLabel.text = "버전 \(result.version)"
         
         // 릴리즈 날짜
-        mReleaseDateLabel.text = result.currentVersionReleaseDate
+        mReleaseDateLabel.text = Common.getDiffDateString(dateStr: result.currentVersionReleaseDate)
         
         // 릴리즈 노트
         mReleaseNoteLabel.text = result.releaseNotes
