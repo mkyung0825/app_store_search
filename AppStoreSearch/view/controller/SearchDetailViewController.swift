@@ -8,14 +8,97 @@
 import UIKit
 
 
-enum SEARCH_DETAIL_SECTION:Int {
+enum SEARCH_DETAIL_SECTION: Int {
     case APP_INFO = 0
     case RELEASE_NOTE
     case SCREEN_SHOT
     case DESC
+    case INFO
     case COUNT
 }
 
+enum SEARCH_DETAIL_INFO_ROW: Int {
+    case VERSION
+    case RELEASE_DATE
+    case DEVELOPER
+    case FILESIZE
+    case GENRE
+    case LANGUAGE
+    case AGE_GRADE
+    case COPY_RIGHT
+    case COUNT
+    
+    func getTitle() -> String {
+        switch self {
+        case .VERSION:
+            return "버전"
+            
+        case .RELEASE_DATE:
+            return "출시일"
+        
+        case .DEVELOPER:
+            return "제공자"
+            
+        case .FILESIZE:
+            return "크기"
+            
+        case .GENRE:
+            return "카테고리"
+            
+        case .LANGUAGE:
+            return "언어"
+            
+        case .AGE_GRADE:
+            return "연령 등급"
+            
+        case .COPY_RIGHT:
+            return "저작권"
+            
+        default:
+            return ""
+        }
+    }
+    
+    func getValue(result: Result) -> String {
+        switch self {
+        case .VERSION:
+            return result.version
+            
+        case .RELEASE_DATE:
+            return Common.getDateString(dateStr: result.releaseDate)                
+        
+        case .DEVELOPER:
+            return ""
+            
+        case .FILESIZE:
+            return ""
+            
+        case .GENRE:
+            return result.primaryGenreName
+            
+        case .LANGUAGE:
+            let newArr:[String] = result.languageCodesISO2A.map {
+                (lang) -> String in
+                if lang.lowercased() == "ko" {
+                    return "한국어"
+                } else if lang.lowercased() == "en" {
+                    return "영어"
+                }
+                return lang
+            }
+            return newArr.joined(separator: ", ")
+            
+        case .AGE_GRADE:
+            return result.trackContentRating
+            
+        case .COPY_RIGHT:
+            return "© \(result.artistName)"
+            
+        default:
+            return ""
+        }
+    }
+}
 
 class SearchDetailViewController: UIViewController, SearchViewProtocol {
     
@@ -60,6 +143,7 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
         
         mTableView.register(UINib(nibName: "SearchDetailScreenShotCell", bundle: nil), forCellReuseIdentifier: "SearchDetailScreenShotCell")
         mTableView.register(UINib(nibName: "SearchDetailDescriptionCell", bundle: nil), forCellReuseIdentifier: "SearchDetailDescriptionCell")
+//        mTableView.register(UINib(nibName: "SearchDetailInfoListCell", bundle: nil), forCellReuseIdentifier: "SearchDetailInfoListCell")
         
         getData()
     }
@@ -113,6 +197,11 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     // row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let rowType: SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
+        if rowType == .INFO {
+            return SEARCH_DETAIL_INFO_ROW.COUNT.rawValue
+        }
         return 1
     }
     
@@ -149,6 +238,13 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             }
             return cell
 
+        } else if rowType == .INFO {
+//            let cell:SearchDetailInfoListCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailInfoListCell", for: indexPath) as! SearchDetailInfoListCell
+//            let rowType:SEARCH_DETAIL_INFO_ROW = SEARCH_DETAIL_INFO_ROW.init(rawValue: indexPath.row) ?? .COUNT
+//            if let result = mResult {
+//                cell.setData(type: rowType, result: result)
+//            }
+//            return cell
         }
         return UITableViewCell()
     }
@@ -161,7 +257,6 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             return SearchDetailAppInfoCell.CELL_HEIGHT
 
         } else if rowType == .RELEASE_NOTE {
-            return UITableView.automaticDimension
             
         } else if rowType == .SCREEN_SHOT {
             let size:CGSize = Common.getImageSizeWithUrl(url: mResult?.screenshotUrls[0] ?? "")
@@ -169,6 +264,8 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
 
         } else if rowType == .DESC {
 
+        } else if rowType == .INFO {
+//            return SearchDetailInfoListCell.CELL_HEIGHT
         }
         return UITableView.automaticDimension
     }
@@ -196,30 +293,32 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     // header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
+
+
+        let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
         
         if rowType == .APP_INFO {
 
         } else if rowType == .RELEASE_NOTE {
-
-            let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
             view.setData(title: "새로운 기능")
             return view
             
         } else if rowType == .SCREEN_SHOT {
-
-            let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
             view.setData(title: "미리보기")
             return view
 
         } else if rowType == .DESC {
             
+        } else if rowType == .INFO {
+            view.setData(title: "정보")
+            return view
         }
         return nil
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
         
-        if rowType == .RELEASE_NOTE || rowType == .SCREEN_SHOT {
+        if rowType == .RELEASE_NOTE || rowType == .SCREEN_SHOT || rowType == .INFO {
             return RecentSearchHeaderView.CELL_DETAIL_HEIGHT
         }
         return 0.1

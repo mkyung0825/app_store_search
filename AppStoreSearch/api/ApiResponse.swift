@@ -72,6 +72,9 @@ struct Result: Codable {
     var currentVersionReleaseDate: String
     var releaseNotes: String
 
+    var languageCodesISO2A: [String]
+    var fileSizeBytes: String
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
@@ -93,5 +96,9 @@ struct Result: Codable {
         version = try container.decodeIfPresent(String.self, forKey: .version) ?? ""
         currentVersionReleaseDate = try container.decodeIfPresent(String.self, forKey: .currentVersionReleaseDate) ?? ""
         releaseNotes = try container.decodeIfPresent(String.self, forKey: .releaseNotes) ?? ""
+
+        languageCodesISO2A = try container.decodeIfPresent([String].self, forKey: .languageCodesISO2A) ?? []
+        fileSizeBytes = try container.decodeIfPresent(String.self, forKey: .fileSizeBytes) ?? ""
+        
     }
 }

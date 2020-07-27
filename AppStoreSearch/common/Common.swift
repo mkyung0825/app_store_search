@@ -85,6 +85,21 @@ class Common: NSObject {
         }
         return returnStr
     }
+    
+    // 날짜 포맷 변경
+    class func getDateString(dateStr: String) -> String {
+        // 2020-07-05T23:31:29Z -> 2020.07.05
+        var returnStr:String = ""
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let date = formatter.date(from: dateStr) {
+            formatter.dateFormat = "yyyy.MM.dd"
+            returnStr = formatter.string(from: date)
+        }
+        return returnStr
+    }
 
     // 숫자(1000000)를 입력 받아 decimal 스트링(1,000,000)으로 반환
     class func priceStr(_ value: CGFloat) -> String {

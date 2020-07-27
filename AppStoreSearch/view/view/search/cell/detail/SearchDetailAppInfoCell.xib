@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -158,10 +158,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1i4-8f-eAC" secondAttribute="trailing" id="E0Z-xp-vXp"/>
                                                     <constraint firstAttribute="bottom" secondItem="dn9-3z-0yA" secondAttribute="bottom" id="JCh-Ih-Hwv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1i4-8f-eAC" secondAttribute="trailing" constant="107" id="bJc-jz-yoE"/>
                                                     <constraint firstItem="1i4-8f-eAC" firstAttribute="centerY" secondItem="bxc-Ai-THv" secondAttribute="centerY" id="eIs-S9-WW5"/>
                                                     <constraint firstItem="dn9-3z-0yA" firstAttribute="leading" secondItem="bxc-Ai-THv" secondAttribute="leading" id="h93-0W-Pb8"/>
                                                     <constraint firstItem="1i4-8f-eAC" firstAttribute="leading" secondItem="dn9-3z-0yA" secondAttribute="trailing" constant="1" id="jpz-kM-xiB"/>
                                                     <constraint firstItem="dn9-3z-0yA" firstAttribute="top" secondItem="bxc-Ai-THv" secondAttribute="top" id="p2c-kL-4X2"/>
+                                                    <constraint firstItem="1i4-8f-eAC" firstAttribute="top" secondItem="bxc-Ai-THv" secondAttribute="top" constant="0.5" id="rUL-Qn-9sv"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHq-v9-u0j">
