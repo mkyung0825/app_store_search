@@ -49,9 +49,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXx-75-nhE">
+                                        <rect key="frame" x="259" y="9.5" width="11" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rXx-75-nhE" secondAttribute="trailing" constant="10" id="5Pu-zG-4I0"/>
+                                    <constraint firstItem="rXx-75-nhE" firstAttribute="centerY" secondItem="Ybh-v1-uls" secondAttribute="centerY" id="8If-MT-D4f"/>
                                     <constraint firstItem="13b-yL-oIS" firstAttribute="top" secondItem="Ybh-v1-uls" secondAttribute="top" id="DV2-kS-zsI"/>
                                     <constraint firstItem="hzb-Ai-aNE" firstAttribute="top" secondItem="13b-yL-oIS" secondAttribute="bottom" id="FW1-yc-EvH"/>
                                     <constraint firstAttribute="bottom" secondItem="hzb-Ai-aNE" secondAttribute="bottom" id="Gcg-sg-fzE"/>

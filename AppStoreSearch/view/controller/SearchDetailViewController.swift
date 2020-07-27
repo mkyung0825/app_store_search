@@ -20,7 +20,7 @@ enum SEARCH_DETAIL_SECTION: Int {
 enum SEARCH_DETAIL_INFO_ROW: Int {
     case VERSION
     case RELEASE_DATE
-    case DEVELOPER
+    case SELLER
     case FILESIZE
     case GENRE
     case LANGUAGE
@@ -36,7 +36,7 @@ enum SEARCH_DETAIL_INFO_ROW: Int {
         case .RELEASE_DATE:
             return "출시일"
         
-        case .DEVELOPER:
+        case .SELLER:
             return "제공자"
             
         case .FILESIZE:
@@ -67,11 +67,11 @@ enum SEARCH_DETAIL_INFO_ROW: Int {
         case .RELEASE_DATE:
             return Common.getDateString(dateStr: result.releaseDate)                
         
-        case .DEVELOPER:
-            return ""
+        case .SELLER:
+            return result.sellerName
             
         case .FILESIZE:
-            return ""
+            return "\(Common.priceStr(CGFloat(Int(result.fileSizeBytes) ?? 0))) byte"
             
         case .GENRE:
             return result.primaryGenreName
