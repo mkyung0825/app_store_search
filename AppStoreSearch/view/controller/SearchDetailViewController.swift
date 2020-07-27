@@ -143,7 +143,7 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
         
         mTableView.register(UINib(nibName: "SearchDetailScreenShotCell", bundle: nil), forCellReuseIdentifier: "SearchDetailScreenShotCell")
         mTableView.register(UINib(nibName: "SearchDetailDescriptionCell", bundle: nil), forCellReuseIdentifier: "SearchDetailDescriptionCell")
-//        mTableView.register(UINib(nibName: "SearchDetailInfoListCell", bundle: nil), forCellReuseIdentifier: "SearchDetailInfoListCell")
+        mTableView.register(UINib(nibName: "SearchDetailInfoListCell", bundle: nil), forCellReuseIdentifier: "SearchDetailInfoListCell")
         
         getData()
     }
@@ -239,12 +239,12 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             return cell
 
         } else if rowType == .INFO {
-//            let cell:SearchDetailInfoListCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailInfoListCell", for: indexPath) as! SearchDetailInfoListCell
-//            let rowType:SEARCH_DETAIL_INFO_ROW = SEARCH_DETAIL_INFO_ROW.init(rawValue: indexPath.row) ?? .COUNT
-//            if let result = mResult {
-//                cell.setData(type: rowType, result: result)
-//            }
-//            return cell
+            let cell:SearchDetailInfoListCell = tableView.dequeueReusableCell(withIdentifier: "SearchDetailInfoListCell", for: indexPath) as! SearchDetailInfoListCell
+            let rowType:SEARCH_DETAIL_INFO_ROW = SEARCH_DETAIL_INFO_ROW.init(rawValue: indexPath.row) ?? .COUNT
+            if let result = mResult {
+                cell.setData(type: rowType, result: result)
+            }
+            return cell
         }
         return UITableViewCell()
     }
@@ -265,7 +265,7 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
         } else if rowType == .DESC {
 
         } else if rowType == .INFO {
-//            return SearchDetailInfoListCell.CELL_HEIGHT
+            return SearchDetailInfoListCell.CELL_HEIGHT
         }
         return UITableView.automaticDimension
     }
@@ -293,32 +293,32 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     // header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
-
-
+        
+        var title:String = ""
         let view:RecentSearchHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentSearchHeaderView") as! RecentSearchHeaderView
         
         if rowType == .APP_INFO {
+            return nil
 
         } else if rowType == .RELEASE_NOTE {
-            view.setData(title: "새로운 기능")
-            return view
+            title = "새로운 기능"
             
         } else if rowType == .SCREEN_SHOT {
-            view.setData(title: "미리보기")
-            return view
+            title = "미리보기"
 
         } else if rowType == .DESC {
+            title = "소개"
             
         } else if rowType == .INFO {
-            view.setData(title: "정보")
-            return view
+            title = "정보"
         }
-        return nil
+        view.setData(title: title)
+        return view
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let rowType:SEARCH_DETAIL_SECTION = SEARCH_DETAIL_SECTION.init(rawValue: section) ?? .COUNT
         
-        if rowType == .RELEASE_NOTE || rowType == .SCREEN_SHOT || rowType == .INFO {
+        if rowType != .APP_INFO {
             return RecentSearchHeaderView.CELL_DETAIL_HEIGHT
         }
         return 0.1

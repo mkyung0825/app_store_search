@@ -10,7 +10,7 @@ import UIKit
 class RecentSearchHeaderView: UITableViewHeaderFooterView {
     
     static let CELL_HEIGHT:CGFloat = 60
-    static let CELL_DETAIL_HEIGHT:CGFloat = 50
+    static let CELL_DETAIL_HEIGHT:CGFloat = 55
     
     @IBOutlet weak var mTitleLabel: UILabel!
     
