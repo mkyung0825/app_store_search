@@ -28,7 +28,9 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var mOpenButton: UIButton!
     
     @IBOutlet weak var mCollectionView: UICollectionView!
-    @IBOutlet weak var mCollectionViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var mContentsHeight: NSLayoutConstraint!
+    
     
     var mProtocol:SearchViewProtocol!
     var mResult:Result!
@@ -54,7 +56,7 @@ class SearchResultCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        mCollectionViewHeight.constant = mScreenShotItemSize.height
+        mContentsHeight.constant = mScreenShotItemSize.height + 60 + 20
     }
     
     func setUI() {
