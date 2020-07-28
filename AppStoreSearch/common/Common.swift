@@ -153,6 +153,20 @@ class Common: NSObject {
         vc.present(alertView, animated: true, completion: nil)
     }
     
+    // maxWidth 기준으로 resize
+    class func resize(size: CGSize, maxWidth: CGFloat) -> CGSize {
+
+        let oriW:CGFloat = size.width
+        let oriH:CGFloat = size.height
+        
+        if oriW <= maxWidth {
+            return size
+        }
+
+        let ratio:CGFloat = maxWidth / oriW
+        return CGSize(width: oriW * ratio, height: oriH * ratio)
+    }
+    
 }
 
 

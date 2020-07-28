@@ -72,6 +72,9 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         
         mTableView.separatorStyle = .none
         
+        mTableView.rowHeight = UITableView.automaticDimension
+        mTableView.estimatedRowHeight = 200
+        
         mTableView.register(UINib(nibName: "RecentSearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "RecentSearchHeaderView")
         mTableView.register(UINib(nibName: "RecentSearchCell", bundle: nil), forCellReuseIdentifier: "RecentSearchCell")
         mTableView.register(UINib(nibName: "RecentSearchFilterCell", bundle: nil), forCellReuseIdentifier: "RecentSearchFilterCell")
@@ -136,6 +139,8 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         // 검색어 서치바에 입력, 포커스 아웃
         mSearchController.searchBar.text = text
         mSearchController.searchBar.becomeFirstResponder()
+        
+        setTableViewData(results: [])
         
         // 검색 api 호출
         ApiRequestManager.getITunesSearchList(text: text) {
@@ -273,7 +278,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return RecentSearchFilterCell.CELL_HEIGHT
             
         } else if sectionType == .SEARCH_RESULT {
-            return SearchResultCell.CELL_HEIGHT
+            return UITableView.automaticDimension
         }
         return 0
     }

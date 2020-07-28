@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,13 +21,13 @@
                         <rect key="frame" x="20" y="15" width="280" height="222"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-g7-5tg">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="156"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="154"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdV-8E-EqI">
-                                <rect key="frame" x="241" y="137" width="39" height="25"/>
+                                <rect key="frame" x="241" y="135" width="39" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="wLS-aN-cKL"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="SdV-8E-EqI" firstAttribute="bottom" secondItem="OGX-g7-5tg" secondAttribute="bottom" constant="6" id="FFa-Xm-fqi"/>
                             <constraint firstItem="OGX-g7-5tg" firstAttribute="leading" secondItem="IRB-Cp-DaJ" secondAttribute="leading" id="Jsh-4p-EuW"/>
                             <constraint firstItem="OGX-g7-5tg" firstAttribute="top" secondItem="IRB-Cp-DaJ" secondAttribute="top" id="Ktk-eZ-OIA"/>
-                            <constraint firstItem="Ybh-v1-uls" firstAttribute="top" secondItem="SdV-8E-EqI" secondAttribute="bottom" constant="20" id="V66-Sy-6Rm"/>
+                            <constraint firstItem="Ybh-v1-uls" firstAttribute="top" secondItem="SdV-8E-EqI" secondAttribute="bottom" constant="22" id="V66-Sy-6Rm"/>
                             <constraint firstAttribute="trailing" secondItem="OGX-g7-5tg" secondAttribute="trailing" id="mg4-BN-4B4"/>
                             <constraint firstAttribute="trailing" secondItem="Ybh-v1-uls" secondAttribute="trailing" id="pyb-gm-tNs"/>
                             <constraint firstItem="SdV-8E-EqI" firstAttribute="trailing" secondItem="OGX-g7-5tg" secondAttribute="trailing" id="zhC-a7-8hc"/>

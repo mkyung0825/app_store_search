@@ -22,7 +22,8 @@ class ScreenShotCollectionCell: UICollectionViewCell {
         mImageView.setCornerRadius(15)
     }
     
-    func setData(url: String) {
+    func setData(url: String, radius: CGFloat = 15) {
+        mImageView.setCornerRadius(radius)
         mImageView.image = nil
         mImageView.load(url: url)
     }
