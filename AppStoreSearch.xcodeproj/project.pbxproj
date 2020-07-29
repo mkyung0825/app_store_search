@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07B6C9DD24D12FA7000D594C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6C9DC24D12FA7000D594C /* Result.swift */; };
 		177C4D69D0540DD146926E35 /* Pods_AppStoreSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9923E46373CE04547B2350FF /* Pods_AppStoreSearch.framework */; };
 		4012E59C24CC77530048F455 /* ExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012E59B24CC77530048F455 /* ExtensionManager.swift */; };
 		403A2DF224CB5D9D00BBA3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A2DF124CB5D9D00BBA3E4 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07B6C9DC24D12FA7000D594C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4012E59B24CC77530048F455 /* ExtensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionManager.swift; sourceTree = "<group>"; };
 		403A2DEE24CB5D9D00BBA3E4 /* AppStoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		403A2DF124CB5D9D00BBA3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		40A9123524CBC19200D8558F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				07B6C9DC24D12FA7000D594C /* Result.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				403A2DF624CB5D9D00BBA3E4 /* SearchViewController.swift in Sources */,
 				40A36B4124CC01FB002786B8 /* NetworkManager.swift in Sources */,
 				403A2DF224CB5D9D00BBA3E4 /* AppDelegate.swift in Sources */,
+				07B6C9DD24D12FA7000D594C /* Result.swift in Sources */,
 				40A9123124CBBDE600D8558F /* SearchDetailViewController.swift in Sources */,
 				404BCD4624CDB82200BA0086 /* ScreenShotCollectionCell.swift in Sources */,
 				40A36B3624CBDF87002786B8 /* RecentSearchHeaderView.swift in Sources */,
