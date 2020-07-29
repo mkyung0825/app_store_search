@@ -29,20 +29,12 @@ class NetworkManager {
         
         let url = URL(string:"\(ApiBaseURL)\(queryString)")!
         var request = URLRequest(url: url)
-        
-//        LOG("api url : \("\(ApiBaseURL)\(queryString)")")
 
         request.httpMethod = httpMethod.rawValue
 
         let task = defaultSession.dataTask(with: request) {
             data, response, error in
-
-//            LOG("=================================")
-//            LOG("data" + String(describing: data))
-//            LOG("response" + String(describing: response))
-//            LOG("error" + String(describing: error))
-//            LOG("=================================")
-            
+     
             if let data = data {
                 do {
                     let model:ApiResponse<M> = try JSONDecoder().decode(ApiResponse<M>.self, from: data)
@@ -59,12 +51,10 @@ class NetworkManager {
                     }
                     
                 } catch let error as NSError {
-//                    LOG("error : \(error)")
                     completion(.apiFail(ApiError(error)))
                 }
                 
             } else if let error = error {
-//                LOG("error : \(error)")
                 completion(.apiFail(ApiError(error as NSError)))
             }
         }

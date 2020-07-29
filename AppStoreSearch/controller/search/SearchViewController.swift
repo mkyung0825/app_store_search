@@ -103,13 +103,11 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         if mIsShowResult { // 검색 결과
             if let resultData = results {
                 mSearchResults = resultData
-//                LOG("set > result data : \(resultData)")
             }
             
         } else { // 최근 검색어
             if let recentSearchData = recentSearchList {
                 mRecentSearchList = recentSearchData
-//                LOG("set > recent search data : \(recentSearchData)")
             }
         }
 
@@ -127,14 +125,12 @@ class SearchViewController: UIViewController, SearchViewProtocol {
             return keyword.range(of: text, options: .caseInsensitive) != nil
         })
 
-//        LOG("-> filter : \(filterList)")
 
         setTableViewData(recentSearchList: filterList)
     }
     
     // 검색어 클릭
     func clickSearchItem(text: String) {
-//        LOG("click : \(text)")
         
         // 검색어 서치바에 입력, 포커스
         mSearchController.searchBar.text = text
@@ -149,14 +145,11 @@ class SearchViewController: UIViewController, SearchViewProtocol {
 
             switch response {
             case .apiFail(let error) :
-//                LOG("apiFail -> \(error)")
                 DispatchQueue.main.async {
                     Common.showAlert(vc: self, title: "API FAIL", message: error.message)
                 }
 
             case .apiSuccess(let data) :
-//                LOG("apiSuccess -> \(data)")
-
                 DispatchQueue.main.async {
                     self.setTableViewData(results: data)
                 }
@@ -356,8 +349,6 @@ extension SearchViewController: UISearchBarDelegate {
                         
         var searchList:[String] = Common.getRecentSearchList()
         
-//        LOG("\(searchList)")
-        
         // 검색어 없는 경우 추가
         if !searchList.contains(searchText) {
             // 0번째 추가
@@ -366,9 +357,7 @@ extension SearchViewController: UISearchBarDelegate {
         
         // 검색어 저장
         Common.setRecentSearchList(value: searchList)
-        
-//        LOG("->\(Common.getRecentSearchList())")
-        
+
         // 검색하기
         clickSearchItem(text: searchText)
     }

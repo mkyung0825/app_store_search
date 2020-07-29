@@ -79,8 +79,6 @@ extension SearchDetailScreenShotCell: UICollectionViewDataSource, UICollectionVi
         size.width = size.width / 2
         size.height = size.height / 2
         
-//        LOG("screeshot : \(indexPath.row), \(mScreenShots[indexPath.row]) -> \(size)")
-        
         return size
     }
 
