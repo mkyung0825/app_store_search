@@ -167,6 +167,28 @@ class Common: NSObject {
         return CGSize(width: oriW * ratio, height: oriH * ratio)
     }
     
+    // file size format 변경
+    class func formatFileSize(value: String) -> String {
+        let byte = CGFloat(Int(value) ?? 0)
+
+        let b:CGFloat = byte
+        let kb:CGFloat = b / 1024
+        let mb:CGFloat = kb / 1024
+        let gb:CGFloat = mb / 1024
+        let tb:CGFloat = gb / 1024
+        
+        if tb > 1 {
+            return "\(Common.roundFloat(number: tb, count: 1)) TB"
+        } else if gb > 1 {
+            return "\(Common.roundFloat(number: gb, count: 1)) GB"
+        } else if mb > 1 {
+            return "\(Common.roundFloat(number: mb)) MB"
+        } else if kb > 1 {
+            return "\(Common.roundFloat(number: kb)) KB"
+        } else {
+            return "\(Common.roundFloat(number: b)) byte"
+        }
+    }
 }
 
 

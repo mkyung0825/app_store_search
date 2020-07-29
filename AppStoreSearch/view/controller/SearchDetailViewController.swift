@@ -71,11 +71,7 @@ enum SEARCH_DETAIL_INFO_ROW: Int {
             return result.sellerName
             
         case .FILESIZE:
-            if let intByte = Int(result.fileSizeBytes) {
-                let mb:CGFloat = CGFloat(intByte) / 1024 / 1024
-                return "\(Common.roundFloat(number: mb)) mb"
-            }
-            return "-"
+            return Common.formatFileSize(value: result.fileSizeBytes)
             
         case .GENRE:
             return result.primaryGenreName

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YHY-WI-LsO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YHY-WI-LsO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,8 +37,8 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fBp-8K-sJm"/>
                         <segue destination="bsq-eX-Qsf" kind="relationship" relationship="viewControllers" id="Ifq-b9-bjB"/>
-                        <segue destination="m49-RD-gSV" kind="relationship" relationship="viewControllers" id="6mY-Tu-QdJ"/>
                         <segue destination="DJi-zk-uEH" kind="relationship" relationship="viewControllers" id="2ei-gF-GE8"/>
+                        <segue destination="m49-RD-gSV" kind="relationship" relationship="viewControllers" id="6mY-Tu-QdJ"/>
                         <segue destination="rAo-eO-kVu" kind="relationship" relationship="viewControllers" id="68k-eY-Mu6"/>
                     </connections>
                 </tabBarController>
@@ -88,7 +88,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="W7K-00-cL0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="업데이트" image="square.and.arrow.down.fill" catalog="system" id="k9h-Jz-k2C"/>
+                    <tabBarItem key="tabBarItem" title="업데이트" image="square.and.arrow.down.fill" catalog="system" badgeValue="23" id="k9h-Jz-k2C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2C-Rc-BH5" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,10 +178,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="paperplane" catalog="system" width="128" height="121"/>
-        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
-        <image name="square.stack.3d.up" catalog="system" width="128" height="124"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="paperplane" catalog="system" width="64" height="60"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="60" height="64"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <image name="square.stack.3d.up" catalog="system" width="64" height="62"/>
     </resources>
 </document>

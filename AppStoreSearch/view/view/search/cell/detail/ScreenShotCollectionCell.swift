@@ -19,7 +19,13 @@ class ScreenShotCollectionCell: UICollectionViewCell {
     }
 
     func setUI() {
+        
+        // image view - corner radius
         mImageView.setCornerRadius(15)
+        
+        // image view - border
+        mImageView.layer.borderWidth = 1
+        mImageView.layer.borderColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1).cgColor        
     }
     
     func setData(url: String, radius: CGFloat = 15) {

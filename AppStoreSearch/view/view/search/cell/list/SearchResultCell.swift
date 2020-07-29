@@ -64,6 +64,10 @@ class SearchResultCell: UITableViewCell {
         // 아이콘 - corner radius
         mIconImageView.setCornerRadius(15)
         
+        // 아이콘 - border
+        mIconImageView.layer.borderWidth = 1
+        mIconImageView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).cgColor
+        
         // 별 평점
         mUserRatingView.settings.fillMode = .precise
         mUserRatingView.isUserInteractionEnabled = false

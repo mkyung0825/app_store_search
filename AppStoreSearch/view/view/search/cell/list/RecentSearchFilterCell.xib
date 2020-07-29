@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,13 +31,23 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wc-St-oxH">
+                        <rect key="frame" x="20" y="43" width="300" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="JuP-LB-fdM"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="da1-Rz-8zO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2gu-m1-OqC"/>
+                    <constraint firstAttribute="trailing" secondItem="9Wc-St-oxH" secondAttribute="trailing" id="By1-ts-Emb"/>
                     <constraint firstAttribute="bottom" secondItem="7n9-aE-3Qe" secondAttribute="bottom" id="Cll-bR-3Qx"/>
                     <constraint firstItem="7n9-aE-3Qe" firstAttribute="leading" secondItem="da1-Rz-8zO" secondAttribute="trailing" constant="5" id="D23-fX-FXa"/>
+                    <constraint firstAttribute="bottom" secondItem="9Wc-St-oxH" secondAttribute="bottom" id="Gr1-TP-GoE"/>
                     <constraint firstItem="7n9-aE-3Qe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PUl-9G-Cvs"/>
                     <constraint firstAttribute="trailing" secondItem="7n9-aE-3Qe" secondAttribute="trailing" id="R37-6J-mDD"/>
+                    <constraint firstItem="9Wc-St-oxH" firstAttribute="leading" secondItem="da1-Rz-8zO" secondAttribute="leading" id="lk2-mB-jCS"/>
                     <constraint firstItem="da1-Rz-8zO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="sjP-uU-2vj"/>
                 </constraints>
             </tableViewCellContentView>
@@ -49,6 +59,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
 </document>

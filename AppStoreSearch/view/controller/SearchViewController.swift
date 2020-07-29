@@ -136,8 +136,9 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     func clickSearchItem(text: String) {
         LOG("click : \(text)")
         
-        // 검색어 서치바에 입력
+        // 검색어 서치바에 입력, 포커스
         mSearchController.searchBar.text = text
+        mSearchController.searchBar.becomeFirstResponder()
         
         // 검색 전 빈 화면 노출
         setTableViewData(results: [])
