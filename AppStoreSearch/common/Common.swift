@@ -143,7 +143,7 @@ class Common: NSObject {
     }
     
     // show alert
-    class func showConfirm(vc: UIViewController, title:String, message: String, callback:(() -> Void)? = nil) {
+    class func showAlert(vc: UIViewController, title:String, message: String, callback:(() -> Void)? = nil) {
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: "확인", style: .default, handler: {
             (alertAction) -> Void in

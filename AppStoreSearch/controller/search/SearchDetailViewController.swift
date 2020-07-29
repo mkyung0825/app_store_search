@@ -161,10 +161,11 @@ class SearchDetailViewController: UIViewController, SearchViewProtocol {
             
             switch response {
             case .apiFail(let error) :
-                LOG("apiFail -> \(error)")
+//                LOG("apiFail -> \(error)")
+                Common.showAlert(vc: self, title: "API FAIL", message: error.message)
 
             case .apiSuccess(let data) :
-                LOG("apiSuccess -> \(data)")
+//                LOG("apiSuccess -> \(data)")
 
                 DispatchQueue.main.async {
                     if data.count > 0 {

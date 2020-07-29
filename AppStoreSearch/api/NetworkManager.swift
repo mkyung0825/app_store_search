@@ -30,8 +30,7 @@ class NetworkManager {
         let url = URL(string:"\(ApiBaseURL)\(queryString)")!
         var request = URLRequest(url: url)
         
-        LOG("api url : \("\(ApiBaseURL)\(queryString)")")
-        LOG("api param : \(String(describing: param ?? [:]))")
+//        LOG("api url : \("\(ApiBaseURL)\(queryString)")")
 
         request.httpMethod = httpMethod.rawValue
 
@@ -60,12 +59,12 @@ class NetworkManager {
                     }
                     
                 } catch let error as NSError {
-                    LOG("error : \(error)")
+//                    LOG("error : \(error)")
                     completion(.apiFail(ApiError(error)))
                 }
                 
             } else if let error = error {
-                LOG("error : \(error)")
+//                LOG("error : \(error)")
                 completion(.apiFail(ApiError(error as NSError)))
             }
         }
