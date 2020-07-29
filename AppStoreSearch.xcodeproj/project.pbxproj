@@ -161,6 +161,23 @@
 			path = list;
 			sourceTree = "<group>";
 		};
+		07B6CA0B24D14992000D594C /* main */ = {
+			isa = PBXGroup;
+			children = (
+				40A9123224CBBFF700D8558F /* MainTabViewController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		07B6CA0C24D1499C000D594C /* search */ = {
+			isa = PBXGroup;
+			children = (
+				403A2DF524CB5D9D00BBA3E4 /* SearchViewController.swift */,
+				40A9123024CBBDE600D8558F /* SearchDetailViewController.swift */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
 		1AB3D556AF0F689478B17AEF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,9 +227,8 @@
 		40492AF524CD464C006E41D5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				403A2DF524CB5D9D00BBA3E4 /* SearchViewController.swift */,
-				40A9123224CBBFF700D8558F /* MainTabViewController.swift */,
-				40A9123024CBBDE600D8558F /* SearchDetailViewController.swift */,
+				07B6CA0B24D14992000D594C /* main */,
+				07B6CA0C24D1499C000D594C /* search */,
 			);
 			path = controller;
 			sourceTree = "<group>";
